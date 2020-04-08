@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: mr-smithers-excellent/docker-build-push@v2
       with:
-        image: docker-hub-repo/videotools-nginx:v1.$(date +%s)
+        image: arashigen/videotools-nginx:v1.$(date +%s)
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
