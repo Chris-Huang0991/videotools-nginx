@@ -14,13 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag videotools-nginx:v1
     - uses: mr-smithers-excellent/docker-build-push@v2
       with:
-        image: docker-hub-repo/videotools-nginx:v1
+        image: docker-hub-repo/videotools-nginx:v1.$(date +%s)
 #         tag: latest
         registry: docker.io
-        dockerfile: Dockerfile.ci
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
