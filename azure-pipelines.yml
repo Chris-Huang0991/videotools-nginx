@@ -36,6 +36,6 @@ stages:
       displayName: Push
       inputs:
         command: buildAndPush
-        repository: arashigen/testazpipeline
+        repository: arashigen/videotools-nginx
         tags: |
           $(tag)
